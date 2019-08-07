@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #A9F5F2;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -64,14 +64,38 @@
         </style>
     </head>
     <body>
-        <div class="content">
-	<div class="title m-b-md">
-		Online Shopping System
-	</div>
+        <div class="content"><center>
+		
+	<div class="title m-b-md"><font face="Lucida handwriting " color="#890ccf" ><big><b>
+		3B Fashion Wears
+	</font></big></b></div>
+	
 	<div>
-	<a href="/customers/dashboard" class="btn btn-success">customer login </a>&nbsp:
+	<table class="table table-bordered" border=""><tr><td>
+	<center>
+		<h2><font face="Times new roman" size="3px" color="black">
+		3B fashion wear situated at New Road, Kathmandu, Ranjana galli.
+		</font>
+	</center>
+	</td></tr></table>
+	</div>
+	
+
+	<div >
+	<br><br>
+	<img src="logo.png" width="300px" height="180px">
+	</div>
+	
+	<div>
+	<a href="/customers/dashboard" class="btn btn-success" >customer login </a>&nbsp:
 	<a href="/dashboard" class="btn btn-success">Admin login </a>
 	</div>
+	
+	<div style="width:70%;float:center" align="center">
+	<div><br/><center><h2><font face="Lucida handwriting, Lucida calligraphy" size="+3" color="#00CCFF">Welcome User</font></h2></center></div>
+	
 	</div>
+	
+	</center></div>
     </body>
 </html>

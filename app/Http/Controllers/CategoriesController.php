@@ -16,7 +16,7 @@ class CategoriesController extends Controller
 		$cate=new Category;
 		$cate->name=$request->name;
 		if($cate->save()){
-			echo "<script>alert('added successfully')</script>";
+			echo ("added successfully");
 		}
 		else{
 			echo "<script>alert('not added')</script>";
