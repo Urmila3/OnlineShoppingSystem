@@ -7,4 +7,5 @@ Name:<input type="text" name="name" value="<?php echo $cat->name;?>"/>
 <input type="submit" value="update"/>
 </form>
 @endsection
+//image:<input type="text" name="image" value="<?php echo $cat->image;?>"/>
 

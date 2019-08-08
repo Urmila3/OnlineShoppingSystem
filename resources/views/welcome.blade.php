@@ -11,8 +11,15 @@
 
         <!-- Styles -->
         <style>
+        .ttl {
+            background:#fff;
+            border: 1px #ebe9e9 solid;
+            height:100px;
+            width:500px;
+            color:#37568f;
+        }
             html, body {
-                background-color: #A9F5F2;
+                background-color: #584565;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -45,11 +52,11 @@
             }
 
             .title {
-                font-size: 50px;
+                font-size: 84px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -64,38 +71,23 @@
         </style>
     </head>
     <body>
-        <div class="content"><center>
-		
-	<div class="title m-b-md"><font face="Lucida handwriting " color="#890ccf" ><big><b>
-		3B Fashion Wears
-	</font></big></b></div>
-	
-	<div>
-	<table class="table table-bordered" border=""><tr><td>
-	<center>
-		<h2><font face="Times new roman" size="3px" color="black">
-		3B fashion wear situated at New Road, Kathmandu, Ranjana galli.
-		</font>
-	</center>
-	</td></tr></table>
-	</div>
-	
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Customer login</a>
 
-	<div >
-	<br><br>
-	<img src="logo.png" width="300px" height="180px">
-	</div>
-	
-	<div>
-	<a href="/customers/dashboard" class="btn btn-success" >customer login </a>&nbsp:
-	<a href="/dashboard" class="btn btn-success">Admin login </a>
-	</div>
-	
-	<div style="width:70%;float:center" align="center">
-	<div><br/><center><h2><font face="Lucida handwriting, Lucida calligraphy" size="+3" color="#00CCFF">Welcome User</font></h2></center></div>
-	
-	</div>
-	
-	</center></div>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Sign up</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+           
+		   
+        </div>
     </body>
 </html>

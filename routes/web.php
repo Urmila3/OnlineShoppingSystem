@@ -36,15 +36,21 @@ Route::get('/customers/delete/{id}','CustomersController@delete');
 Route::get('/customers/getall','CustomersController@GetCustomers');
 Route::get('/customers/getcustomersdetail','CustomersController@GetCustomersDetail');
 
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+	
+	Route::get('/products','ProductsController@Index');
+	Route::post('/products/save','ProductsController@Save');
+	Route::get('/products/create','ProductsController@Form');
+	Route::get('/products/edit/{id}','ProductsController@Edit');
+	Route::post('/products/update/{id}','ProductsController@update');
+	Route::get('/products/delete/{id}','ProductsController@delete');
+	Route::get('/products/getall','ProductsController@GetProducts');
+	Route::get('/products/getproductsdetail','ProductsController@GetProductsDetail');
+});
 
-Route::post('/products/save','ProductsController@Save');
-Route::get('/products','ProductsController@Index');
-Route::get('/products/create','ProductsController@Form');
-Route::get('/products/edit/{id}','ProductsController@Edit');
-Route::post('/products/update/{id}','ProductsController@update');
-Route::get('/products/delete/{id}','ProductsController@delete');
-Route::get('/products/getall','ProductsController@GetProducts');
-Route::get('/products/getproductsdetail','ProductsController@GetProductsDetail');
+
+
+	
 
 Route::post('/sales/save','SalesController@Save');
 Route::get('/sales','SalesController@Index');
@@ -63,3 +69,14 @@ Route::post('/salesdetails/update/{id}','SalesdetailsController@update');
 Route::get('/salesdetails/delete/{id}','SalesdetailsController@delete');
 Route::get('/salesdetails/getall','SalesdetailsController@GetSalesDetails');
 Route::get('/salesdetails/getsalessdetail','SalesdetailsController@GetSalesDetail');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//customerside
+Route::get('/products/list', 'ProductsController@productlist');
+Route::get('/orders/list', 'OrdersController@orderlist');
+Route::get('/payments/list','PaymentsController@paymentlist');
+
+
+

@@ -9,13 +9,13 @@ aria-expanded="false" aria-label="Toggle navigation">
 <ul class="navbar-nav mr-auto">
 
 <li class="nav-item active">
-<a class="nav-link" href="/categories">Category<span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/admin/categories">Category<span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item active">
-<a class="nav-link" href="/products">Products<span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/admin/products">Products<span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item active">
-<a class="nav-link" href="/customers">Customers<span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/admin/customers">Customers<span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item active">
 <a class="nav-link" href="/sales">Sales<span class="sr-only">(current)</span></a>
