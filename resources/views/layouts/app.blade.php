@@ -22,6 +22,15 @@
 	body{
 		background-color:#584565;
 	}
+	.image1 {
+		
+		justify-content: space-between;
+		max-width: 100%;
+		height: auto;
+		text-align: center;
+		display: block;
+		
+}
 	</style>
 </head>
 <body>

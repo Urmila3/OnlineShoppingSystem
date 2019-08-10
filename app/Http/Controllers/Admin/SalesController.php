@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Sale;
@@ -22,7 +22,7 @@ class salesController extends Controller
 		else{
 			echo "<script>alert('not added')</script>";
 		}
-		return redirect("sales");
+		return redirect("/admin/sales");
     }
 	
 	public function Edit($id){
@@ -35,7 +35,7 @@ class salesController extends Controller
 		$sal->sales_id=$request->sales_id;
 		$sal->amount=$request->amount;
 		$sal->save();
-		return redirect('/sales');
+		return redirect("/admin/sales");
 	}
 	
 	public function GetSales(){
@@ -49,7 +49,7 @@ class salesController extends Controller
 	
 	public function delete($id){
 		$sald=sale::findOrFail($id)->delete();
-		return redirect('/sales');
+		return redirect('/admin/sales');
 	}
 	
 }

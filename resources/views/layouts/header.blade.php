@@ -18,7 +18,7 @@ aria-expanded="false" aria-label="Toggle navigation">
 <a class="nav-link" href="/admin/customers">Customers<span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item active">
-<a class="nav-link" href="/sales">Sales<span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/admin/sales">Sales<span class="sr-only">(current)</span></a>
 </li>
 
 

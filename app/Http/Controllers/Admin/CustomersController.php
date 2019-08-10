@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Customer;
@@ -23,7 +23,7 @@ class customersController extends Controller
 		else{
 			echo "<script>alert('not added')</script>";
 		}
-		return redirect("customers");
+		return redirect("/admin/customers");
     }
 	
 	public function Edit($id){
@@ -37,7 +37,7 @@ class customersController extends Controller
 		$custArray->address=$request->address;
 		$custArray->mobile=$request->mobile;
 		$custArray->save();
-		return redirect('/customers');
+		return redirect('/admin/customers');
 	}
 	
 	public function GetCustomers(){
@@ -51,7 +51,7 @@ class customersController extends Controller
 	
 	public function delete($id){
 		$custs=customer::findOrFail($id)->delete();
-		return redirect('/customers');
+		return redirect('/admin/customers');
 	}
 	
 	public function GetCustomersDetail(){

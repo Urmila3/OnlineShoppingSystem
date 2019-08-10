@@ -1,9 +1,9 @@
 @extends('layouts.layout')
 @section('content')
 
-<a href="/customers/create" class="btn btn-info">new customer</a><br/><br/>
+<a href="/admin/customers/create" class="btn btn-info">new customer</a><br/><br/>
 <table class="table table-striped">
-<tr>
+<tr class="bg-primary">
 <th>SNo.</th>
 <th>Name</th>
 <th>Address</th>
@@ -18,8 +18,9 @@
 <td><?php echo $cust->name;?></td>
 <td><?php echo $cust->address;?></td>
 <td><?php echo $cust->mobile;?></td>
-<td><a href="customers/edit/<?php echo $cust->id?>">edit</a></td>&nbsp;
-<td><a href="customers/delete/<?php echo $cust->id?>">delete</a></td>
+<td></td>
+<td><a class="btn btn-success" href="/admin/customers/edit/<?php echo $cust->id?>">edit</a>&nbsp;
+<a class="btn btn-danger" href="customers/delete/<?php echo $cust->id?>">delete</a></td>
 
 </tr>
 <?php } ?>

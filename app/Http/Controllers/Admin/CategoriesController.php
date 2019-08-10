@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Category;
@@ -16,12 +16,12 @@ class CategoriesController extends Controller
 		$cate=new Category;
 		$cate->name=$request->name;
 		if($cate->save()){
-			echo ("added successfully");
+			echo "added successfully";
 		}
 		else{
 			echo "<script>alert('not added')</script>";
 		}
-		return redirect("categories");
+		return redirect("/admin/categories");
     }
 	
 	 public function Form(){
@@ -37,7 +37,7 @@ class CategoriesController extends Controller
 		$catArray=category::find($id);
 		$catArray->name=$request->name;
 		$catArray->save();
-		return redirect('/categories');
+		return redirect('/admin/categories');
 	}
 	
 	public function GetCategoriesDetail(){
@@ -52,6 +52,6 @@ class CategoriesController extends Controller
 	
 	public function delete($id){
 		$cut=category::findOrFail($id)->delete();
-		return redirect('/categories');
+		return redirect('/admin/categories');
 	}
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
+
 use App\Product;
 
 class productsController extends Controller
@@ -17,6 +20,7 @@ class productsController extends Controller
 		$prod->category_id=$request->category_id;
 		$prod->product_name=$request->product_name;
 		$prod->product_size=$request->product_size;
+		$prod->image=$request->image;
 		$prod->price=$request->price;
 		if($prod->save()){
 			echo "<script>alert('added successfully')</script>";
@@ -36,9 +40,10 @@ class productsController extends Controller
 		$prod->category_id=$request->category_id;
 		$prod->product_name=$request->product_name;
 		$prod->product_size=$request->product_size;
+		$prod->image=$request->image;
 		$prod->price=$request->price;
 		$prod->save();
-		return redirect('/products');
+		return redirect('/admin/products');
 	}
 	public function GetProducts(){
 	$proArray= product::all();
@@ -49,16 +54,47 @@ class productsController extends Controller
      return view('products.form');
 	}
 	
-	public function GetProductsDetail(){
-		$proArray=product::find(1);
-		echo $proArray->category_id;
-		echo $proArray->product_name;
-		echo $proArray->product_size;
-		echo $proArray->price;
-	}
 	
 	public function delete($id){
 		$prods=product::findOrFail($id)->delete();
-		return redirect('/products');
+		return redirect('/admin/products');
 	}
+	
+	public function UploadFile(Request $request){
+		$file=$request->file("image");
+		$file->move("/admin/products/create",$file->getClientOriginalExtension());
+		
+	}
+	
+/*read garxa yo functionle*/
+	public function getAllImages(){
+		$images=\File::files("D:\myspace");
+		foreach($images as $image){
+			$info=pathinfo($image);
+			echo $info['basename'];
+			echo "<img src='D:\myspace".$info['basename']."'/>";
+		}
+		return view("products.form",compact($images));
+	}
+	
+	
+	/*public function getAllImages(Request $request) {
+		
+		$user=new file;
+		$user->category_id=Input::get('product_name');
+		if(Input::hasFile('image')){
+			$file=Input::file('image');
+			$file->move(public_path().'/',$file->getClientOriginalName());
+			$user->product_name=$file->getClientOriginalName();
+		}
+		$user->save();
+		return redirect("/admin/products/upp");
+	}		
+	
+	public function Show(){
+		$user=file::all();
+		return view("products.upload",compact('user'));
+	}	*/
+	
+
 }
