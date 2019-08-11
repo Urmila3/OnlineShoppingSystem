@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 
 use App\Product;
+use App\Category;
 
 class productsController extends Controller
 {
@@ -17,17 +18,16 @@ class productsController extends Controller
     public function Save(Request $request){
 		$prod=new Product();
 		if($request->hasFile('image')){
-			$image=$request->file('image');
-			$name=$image->getClientOriginalName();
-			$destinationPath=public_path('/uploads');
-			$imagePath=$destinationPath."/".$name;
-			$image->move($destinationPath,$name);
-			$prod->image=$name;
+			$image = $request->file('image');
+            $name = $image->getClientOriginalName();
+            $destinationPath = public_path('/uploads');
+            $imagePath = $destinationPath. "/".  $name;
+            $image->move($destinationPath, $name);
+            $prod->image = $name;
 		}
 		$prod->category_id=$request->category_id;
 		$prod->product_name=$request->product_name;
 		$prod->product_size=$request->product_size;
-		$prod->image=$request->image;
 		$prod->price=$request->price;
 		if($prod->save()){
 			echo "<script>alert('added successfully')</script>";
@@ -58,7 +58,8 @@ class productsController extends Controller
     }
 	
 	public function Form(){
-     return view('admin.products.form');
+		$cats = Category::all();
+     return view('admin.products.form', compact('cats'));
 	}
 	
 	

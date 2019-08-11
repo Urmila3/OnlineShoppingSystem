@@ -3,7 +3,13 @@
 <form action="/admin/products/save" method="post" enctype="multipart/form-data">
 @csrf
 <table>
-<tr><th>Category id:</th><td><input type="text" name="category_id"></td>
+<tr><th>Category</th><td>
+<select name="category_id">
+<?php foreach($cats as $cat)  { ?>
+<option value="<?php echo $cat->id ?>"><?php echo $cat->name ?></option>
+<?php } ?>
+</section>
+</td>
 <tr><th>Product name:</th><td><input type="text" name="product_name"></td>
 <tr><th>Product size:</th><td><input type="text" name="product_size"></td>
 <tr><th>Image:</th><td><input type="file" name="image" class="form-control" required></td>
