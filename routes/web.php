@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard',"DashboardController@Index");
+////////Admin routes///////
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+	
+	Route::get('/dashboard',"DashboardController@Index");
+	
 	Route::post('/categories/save','CategoriesController@Save');
 	Route::get('/categories','CategoriesController@Index');
 	Route::get('/categories/create','CategoriesController@Form');
@@ -26,8 +29,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 	Route::get('/categories/delete/{id}','CategoriesController@delete');
 	Route::get('/categories/getall','CategoriesController@GetCategories');
 	Route::get('/categories/getcategoriesdetail','CategoriesController@GetCategoriesDetail');
-});
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+
+
 	Route::post('/customers/save','CustomersController@Save');
 	Route::get('/customers','CustomersController@Index');
 	Route::get('/customers/create','CustomersController@Form');
@@ -36,9 +39,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 	Route::get('/customers/delete/{id}','CustomersController@delete');
 	Route::get('/customers/getall','CustomersController@GetCustomers');
 	Route::get('/customers/getcustomersdetail','CustomersController@GetCustomersDetail');
-});
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+
+
 	Route::get('/products','ProductsController@Index');
 	Route::post('/products/save','ProductsController@Save');
 	Route::get('/products/create','ProductsController@Form');
@@ -47,15 +50,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 	Route::get('/products/delete/{id}','ProductsController@delete');
 	Route::post("/products/uploadfile","ProductsController@UploadFile");
 	Route::get("/products/getallimages","ProductsController@getAllImages");
-	Route::get("/products/show","ProductsController@show");
+	
 	
 	Route::get('/products/getall','ProductsController@GetProducts');
 	Route::get('/products/getproductsdetail','ProductsController@GetProductsDetail');
-});
 
 
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+
+
 	Route::get('/sales','SalesController@Index');
 	Route::post('/sales/save','SalesController@Save');
 	Route::get('/sales/create','SalesController@Form');
@@ -76,7 +79,7 @@ Route::get('/products/list', 'ProductsController@productlist');
 Route::get('/orders/list', 'OrdersController@orderlist');
 Route::get('/payments/list','PaymentsController@paymentlist');
 
+Route::get('/search/cat/{id}',"SearchController@FindByCategory");
 
 
-Route::get('/home','HomeController@Index');
 

@@ -22,7 +22,8 @@
 <td><?php echo $prod->category_id;?></td>
 <td><?php echo $prod->product_name;?></td>
 <td><?php echo $prod->product_size;?></td>
-<td><?php echo $prod->image;?></td>
+<td><img src="/uploads/<?php echo $prod->image;?> "height="50px" width="100px"/></td>
+
 <td><?php echo $prod->price;?></td>
 <td></td>
 <td><a class="btn btn-success" href="products/edit/<?php echo $prod->id?>">edit</a>&nbsp;
