@@ -60,6 +60,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 
 
 	Route::get('/sales','SalesController@Index');
+	Route::get('/sales/detail/{id}','SalesController@Detail');
 	Route::post('/sales/save','SalesController@Save');
 	Route::get('/sales/create','SalesController@Form');
 	Route::get('/sales/edit/{id}','SalesController@Edit');

@@ -9,7 +9,7 @@ class customersController extends Controller
 {
     public function Index(){
 	$custArray = customer::all();
-	return view('customers.index',compact("custArray"));
+	return view('admin.customers.index',compact("custArray"));
     }   
 	
     public function Save(Request $request){
@@ -28,7 +28,7 @@ class customersController extends Controller
 	
 	public function Edit($id){
 		$cust=customer::find($id);
-		return view('customers.edit',compact('cust'));
+		return view('admin.customers.edit',compact('cust'));
 	}
 	
 	public function update(Request $request,$id){
@@ -42,11 +42,11 @@ class customersController extends Controller
 	
 	public function GetCustomers(){
 	$custArray= customer::all();
-	return view("customers.edit",compact("custArray"));
+	return view("admin.customers.edit",compact("custArray"));
     }
 	
 	public function Form(){
-     return view('customers.form');
+     return view('admin.customers.form');
 	}
 	
 	public function delete($id){

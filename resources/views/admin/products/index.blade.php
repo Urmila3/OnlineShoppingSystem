@@ -6,6 +6,7 @@
 <thead class="thead-dark">
 <tr>
 <th>SNo.</th>
+
 <th>category_id</th>
 <th>product_name</th>
 <th>product_size</th>
@@ -22,7 +23,8 @@
 <td><?php echo $prod->category_id;?></td>
 <td><?php echo $prod->product_name;?></td>
 <td><?php echo $prod->product_size;?></td>
-<td><img src="/uploads/<?php echo $prod->image;?> "height="50px" width="100px"/></td>
+<td><img src="/uploads/<?php echo $prod->image;?>" height="100px" width="100px"/></td>
+
 
 <td><?php echo $prod->price;?></td>
 <td></td>

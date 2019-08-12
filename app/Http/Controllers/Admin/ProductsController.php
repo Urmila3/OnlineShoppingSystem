@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Input;
 
 use App\Product;
+use App\Category;
 
 class productsController extends Controller
 {
@@ -27,7 +28,7 @@ class productsController extends Controller
 		$prod->category_id=$request->category_id;
 		$prod->product_name=$request->product_name;
 		$prod->product_size=$request->product_size;
-		$prod->image=$request->image;
+		
 		$prod->price=$request->price;
 		if($prod->save()){
 			echo "<script>alert('added successfully')</script>";
@@ -39,12 +40,15 @@ class productsController extends Controller
     }
 	
 	public function Edit($id){
+		
+
 		$prod=product::find($id);
 		return view('admin.products.edit',compact('prod'));
 	}
 	public function update(Request $request,$id){
 		$prod=product::find($id);
 		$prod->category_id=$request->category_id;
+	
 		$prod->product_name=$request->product_name;
 		$prod->product_size=$request->product_size;
 		$prod->image=$request->image;
@@ -58,7 +62,9 @@ class productsController extends Controller
     }
 	
 	public function Form(){
-     return view('admin.products.form');
+		$cats=Category::all();
+	 return view('admin.products.form',compact('cats'));
+	 
 	}
 	
 	
