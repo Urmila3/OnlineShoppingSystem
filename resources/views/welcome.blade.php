@@ -70,10 +70,11 @@
             }
             .container{
                 margin-top:50px;
+                font-size:20px;
                 height:550px;
                 width:100%;
                 //background:#fff !important;
-                color:white;
+                color:red;
             }
             .prod-img{
                 height:150px;
@@ -129,7 +130,7 @@
                 <span class="box-body">
                 <img src="/uploads/<?php echo $product->image ?>" class="prod-img"/><br/>
                 RS:<?php echo $product->price ?>
-                <a href="/site/add-cart" class="add-to-cart-btn">Add To Cart</a>
+                <a href="/orders/add-cart/<?php echo $product->id ?>" class="add-to-cart-btn">Add To Cart</a>
                 </span>
                 </div>
             <?php } ?>

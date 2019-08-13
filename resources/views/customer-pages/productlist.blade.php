@@ -46,6 +46,7 @@
         }
         .search-result{
             background: #fff;
+            color:#212F3C;
         }
 </style>
 <div class="container">

@@ -13,7 +13,9 @@
 
 
 Route::get('/','SiteController@index');
-Route::get('/site/add-cart','SiteController@index');
+Route::get('/orders/add-cart/{id}','OrdersController@addToCart');
+Route::get('/orders/cart', 'OrdersController@cart');
+Route::get('/orders/cart/empty', 'OrdersController@emptyCart');
 
 ////////Admin routes///////
 
