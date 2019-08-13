@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/','SiteController@index');
+Route::get('/site/add-cart','SiteController@index');
 
 ////////Admin routes///////
 
@@ -80,7 +80,7 @@ Route::get('/products/list', 'ProductsController@productlist');
 Route::get('/orders/list', 'OrdersController@orderlist');
 Route::get('/payments/list','PaymentsController@paymentlist');
 
-Route::get('/search/cat/{id}',"SearchController@FindByCategory");
+Route::get('/search/find/{id}',"SearchController@FindByCategory");
 
 
 

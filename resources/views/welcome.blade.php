@@ -68,6 +68,27 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .container{
+                margin-top:50px;
+                height:550px;
+                width:100%;
+                //background:#fff !important;
+                color:white;
+            }
+            .prod-img{
+                height:150px;
+                width:150px;
+            }
+            .box{
+                background-color:#ebe9e9 !important;
+                background: grey;
+                border: 1px solid #red;
+                margin:10px 10px;
+            }
+            .add-to-cart-btn{
+                background:green;
+                color:#fff;
+            }
         </style>
     </head>
     <body>
@@ -75,7 +96,19 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+
+                       
+
+                        <?php 
+                         foreach($Categories as $cute){ ?>
+                            <a href="/search/find/<?php echo $cute->id; ?>"><?php echo $cute->name?></a>
+                       <?php } ?>
+
+                       <a href="{{ url('/home') }}">Home</a>
+                      
+
+
+
                     @else
                         <a href="{{ route('login') }}">Customer login</a>
 
@@ -86,8 +119,26 @@
                 </div>
             @endif
 
+            <div class="container">
+            <span>Our Product</span>
+            <?php foreach($products as $product)  {  ?>
+                <div class="box">
+                <span class="box-title">
+                <?php echo $product->product_name ?>
+                </span><br/>
+                <span class="box-body">
+                <img src="/uploads/<?php echo $product->image ?>" class="prod-img"/><br/>
+                RS:<?php echo $product->price ?>
+                <a href="/site/add-cart" class="add-to-cart-btn">Add To Cart</a>
+                </span>
+                </div>
+            <?php } ?>
+        </div>
            
 		   
         </div>
+        
+    
+            
     </body>
 </html>
