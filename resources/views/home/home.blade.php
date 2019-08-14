@@ -46,10 +46,7 @@ Life isn't perfect but your outfit can be.
 <div>
 	
 	<img src="Homepg/map.png" width="300px" width="200px">
-	<img  src="Homepg/d.png" width="190px" width="90px"/>
-	<img  src="Homepg/dd.png" width="190px" width="90px"/>
-	<img src="Homepg/ddd.png" width="180px" width="90px"/>
-	<img src="Homepg/iii.png" width="195px" width="90px"/>
+	
 </div>
 
 <div>

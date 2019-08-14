@@ -22,7 +22,7 @@ class OrdersController extends Controller
 		 
 		$products[] = array('id' => $id, 'name' => $productObj->product_name, 'image' => $productObj->image, 'price' => $productObj->price);
 		$request->session()->put('cart-item', $products);
-		echo "added successuly<a href='/orders'></a>";
+		echo "added successufully<a href='/orders'></a>";
 	}
 	public function cart(Request $request) {
 		$products = $request->session()->get('cart-item');

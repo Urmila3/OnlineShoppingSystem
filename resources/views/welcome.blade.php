@@ -36,6 +36,12 @@
                 display: flex;
                 justify-content: center;
             }
+            .featured{
+                width: 1270px;
+                overflow-x:auto;
+                overflow-y:none;
+            }
+            
 
             .position-ref {
                 position: relative;
@@ -71,9 +77,9 @@
             .container{
                 margin-top:50px;
                 font-size:20px;
-                height:550px;
+                height:610px;
                 width:100%;
-                //background:#fff !important;
+                background: #a99ca3 ;
                 color:red;
             }
             .prod-img{
@@ -81,6 +87,7 @@
                 width:150px;
             }
             .box{
+                float:left;
                 background-color:#ebe9e9 !important;
                 background: grey;
                 border: 1px solid #red;
@@ -89,6 +96,10 @@
             .add-to-cart-btn{
                 background:green;
                 color:#fff;
+            }
+            #product-txt{
+                width: 400px;
+                margin-left:50px;
             }
         </style>
     </head>
@@ -121,10 +132,17 @@
             @endif
 
             <div class="container">
-            <span>Our Product</span>
+
+                
+                <h1><span class"badge badge-info">Trendy Clothes</span></h1>
+
+                <span>Our Product</span>
+
+                <div class="row featured">
+
             <?php foreach($products as $product)  {  ?>
                 <div class="box">
-                <span class="box-title">
+                <span class="badge badge-secondary">
                 <?php echo $product->product_name ?>
                 </span><br/>
                 <span class="box-body">
@@ -135,11 +153,6 @@
                 </div>
             <?php } ?>
         </div>
-           
-		   
         </div>
-        
-    
-            
     </body>
 </html>
