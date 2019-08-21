@@ -16,6 +16,8 @@ Route::get('/','SiteController@index');
 Route::get('/orders/add-cart/{id}','OrdersController@addToCart');
 Route::get('/orders/cart', 'OrdersController@cart');
 Route::get('/orders/cart/empty', 'OrdersController@emptyCart');
+Route::get("/checkout","OrdersController@GetCheckout");
+Route::post('/checkout',"OrdersController@postCheckout");
 
 ////////Admin routes///////
 

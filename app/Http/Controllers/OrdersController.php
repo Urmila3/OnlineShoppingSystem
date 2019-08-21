@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Product;
 
+use Stripe\Stripe;
+use Stripe\Charge;
+
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -26,6 +29,42 @@ class OrdersController extends Controller
 	}
 	public function cart(Request $request) {
 		$products = $request->session()->get('cart-item');
+		
 		return view('customer-pages.cart', compact('products'));
 	}
+
+	public function GetCheckout(){
+		if(!Session::has('cart-item')){
+			return view("customer-pages.cart");
+		}
+		$products=Session::get('cart-item');
+		$cart=new cart($products);
+		$total=$cart->price;
+		return view("customer-pages.checkout",['total'=>$total]);
+	}
+	public function postCheckout(Request $request){
+		if(!Session::has('cart-item')){
+			return redirect()->route('customer-pages.cart');
+		}
+		$products=Session::get('cart-item');
+		$cart=new cart($products);
+
+		Stripe::setApiKey('');
+		try{
+			Charge:create(array(
+				"amount"=>$cart->price,
+				"currency" => "Rs",
+				"source"=>$request->input('stripeToken')
+			));
+		}
+		catch(Exception $e){
+			return redirect()->route('/checkout')->with('error', $e->getMessage());
+
+		}
+		
+		Session::forget('cart-item');
+		return redirect()->route('product.index')->with('success','Successfully purchased products');
+
+	}
+
 }
