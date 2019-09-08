@@ -11,13 +11,26 @@
 |
 */
 
-
 Route::get('/','SiteController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//customerside
+Route::get('/products/list', 'ProductsController@productlist');
+Route::get('/orders/list', 'OrdersController@orderlist');
+Route::get('/payments/list','PaymentsController@paymentlist');
+
+Route::get('/search/find/{id}',"SearchController@FindByCategory");
+
+
 Route::get('/orders/add-cart/{id}','OrdersController@addToCart');
 Route::get('/orders/cart', 'OrdersController@cart');
 Route::get('/orders/cart/empty', 'OrdersController@emptyCart');
-Route::get("/checkout","OrdersController@GetCheckout");
-Route::post('/checkout',"OrdersController@postCheckout");
+Route::get('/cart/remove/{id}', "OrdersController@removeItem");
+Route::get('/cart/checkout','OrdersController@checkout');
+
 
 ////////Admin routes///////
 
@@ -75,16 +88,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 });
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-//customerside
-Route::get('/products/list', 'ProductsController@productlist');
-Route::get('/orders/list', 'OrdersController@orderlist');
-Route::get('/payments/list','PaymentsController@paymentlist');
-
-Route::get('/search/find/{id}',"SearchController@FindByCategory");
 
 
 

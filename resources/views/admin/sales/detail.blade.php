@@ -8,7 +8,7 @@
 <div class="ttl"><h3>Sales Detail</h3><div>
     <table class="table table-striped">
         <tr>
-            <th>Sales id</th><td><?php echo $salesd->sales_id; ?></td>
+            <th>Sales id</th><td><?php echo $salesd->customer_id; ?></td>
         </tr>
 
 		<tr>

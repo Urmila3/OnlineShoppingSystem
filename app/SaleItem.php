@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Saledetail extends Model
+class SaleItem extends Model
 {
     //
 }

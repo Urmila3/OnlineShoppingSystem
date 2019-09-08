@@ -71,8 +71,15 @@
                             </li>
 							
                             <li class="nav-item">
-                                <a class="nav-link" href="/orders/cart">{{ __('Cart') }}(2)</a>
+                                <a class="nav-link" href="/orders/cart">{{ __('Cart') }} 
+                                <?php if (Session::get('cart-item') != null) { ?>
+                                (<?php echo count(Session::get('cart-item')) ?>)
+                                <?php }else{ ?>
+                                (0)
+                                <?php } ?>
+                                </a>
                             </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

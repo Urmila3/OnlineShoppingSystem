@@ -4,7 +4,7 @@
 <table class="table table-striped">
 <tr class="table-danger">
 <th>SNo.</th>
-<th>sales_id</th>
+<th>customer id</th>
 <th>amount</th>
 <th></th>
 <th></th>
@@ -13,7 +13,7 @@
 	<?php foreach($salArray as $sal){ ?>
 <tr>
 <td><?php echo $i++ ?></td>
-<td><?php echo $sal->sales_id;?></td>
+<td><?php echo $sal->customer_id;?></td>
 <td><?php echo $sal->amount;?></td>
 <td></td>
 <td><a class="btn btn-success" href="/admin/sales/edit/<?php echo $sal->id?>">edit</a>&nbsp;

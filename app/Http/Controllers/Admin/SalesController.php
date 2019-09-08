@@ -14,7 +14,7 @@ class salesController extends Controller
 	
     public function Save(Request $request){
 		$sal=new Sale;
-		$sal->sales_id=$request->sales_id;
+		$sal->customer_id=$request->customer_id;
 		$sal->amount=$request->amount;
 		if($sal->save()){
 			echo "<script>alert('added successfully')</script>";
@@ -32,7 +32,7 @@ class salesController extends Controller
 	
 	public function update(Request $request,$id){
 		$sal=sale::find($id);
-		$sal->sales_id=$request->sales_id;
+		$sal->customer_id=$request->customer_id;
 		$sal->amount=$request->amount;
 		$sal->save();
 		return redirect("/admin/sales");

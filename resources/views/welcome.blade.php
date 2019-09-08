@@ -80,7 +80,7 @@
                 height:610px;
                 width:100%;
                 background: #a99ca3 ;
-                color:red;
+                color:#584565;
             }
             .prod-img{
                 height:150px;
@@ -102,20 +102,31 @@
                 margin-left:50px;
             }
         </style>
+        <?php if(isset($msg) && $msg == 1) { ?>
+        <script>
+        alert("Added Successfully");
+        </script>
+        <?php } ?>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
+                    @auth        
 
-                       
-
-                        <?php 
+                       <?php 
                          foreach($Categories as $cute){ ?>
                             <a href="/search/find/<?php echo $cute->id; ?>"><?php echo $cute->name?></a>
                        <?php } ?>
 
+                        <a class="nav-link" href="/orders/cart">{{ __('Cart') }} 
+                        <?php if (Session::get('cart-item') != null) { ?>
+                        (<?php echo count(Session::get('cart-item')) ?>)
+                        <?php }else{ ?>
+                        (0)
+                        <?php } ?>
+                        </a>
+                            
                        <a href="{{ url('/home') }}">Home</a>
                       
 
