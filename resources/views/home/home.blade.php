@@ -33,7 +33,6 @@ Life isn't perfect but your outfit can be.
 	
 </div>
 
-<div>
 
 </div>
 @endsection

@@ -16,8 +16,7 @@
 <td><?php echo $sal->customer_id;?></td>
 <td><?php echo $sal->amount;?></td>
 <td></td>
-<td><a class="btn btn-success" href="/admin/sales/edit/<?php echo $sal->id?>">edit</a>&nbsp;
-<a class="btn btn-danger" href="sales/delete/<?php echo $sal->id?>">delete</a>&nbsp;
+<td>
 <a class="btn btn-secondary" href="sales/detail/<?php echo $sal->id?>">detail</a></td>
 </tr>
 <?php } ?>

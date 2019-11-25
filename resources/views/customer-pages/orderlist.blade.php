@@ -21,6 +21,8 @@
 @section('content')
 <div class="container">
     <div class="row featured">
+        <?php if(isset($sales)) { ?> 
+
         <table class="table">
             <tr>
                 <td>Sales Id</td>
@@ -33,6 +35,7 @@
             </tr>
             <?php } ?>
         </table>
+            <?php } ?>
     </div>
     </div>
 @endsection
