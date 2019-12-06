@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products/list', 'ProductsController@productlist');
 Route::get('/orders/list', 'OrdersController@orderlist');
 Route::get('/payments/list','PaymentsController@paymentlist');
+Route::get('/customers/list','OrdersController@customerslist');
 
 Route::get('/search/find/{id}',"SearchController@FindByCategory");
 

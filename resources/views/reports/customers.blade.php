@@ -71,9 +71,9 @@
 <br/>
 <table border="1px">
 <tr>
-	<th>Sales Id</th>
-	<th>Customer Id</th>
-	<th>Amount</th>
+	<th>Name</th>
+	<th>Address</th>
+	<th>Phone No.</th>
 	<th>Created at</th>
     <th>Updated at</th>
 </tr>
@@ -82,9 +82,9 @@
 foreach ($customers as $cust) { ?>
 
 <tr>
-    <td><?php echo $cust->sales_id ?></td>
-	<td><?php echo $cust->customer_id ?></td>
-	<td><?php echo $cust->amount ?></td>
+    <td><?php echo $cust->name ?></td>
+	<td><?php echo $cust->address ?></td>
+	<td><?php echo $cust->mobile ?></td>
 	<td><?php echo $cust->created_at ?></td>
     <td><?php echo $cust->updated_at ?></td>
 </tr>

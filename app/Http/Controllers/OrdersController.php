@@ -85,7 +85,7 @@ public function checkout(Request $request){
 	else{
 		echo "Something went wrong";
 	}
-	echo "Your order is placed!!!"."<br/>";
+	echo "<big>Your order is placed!!!</big>"."<br/>";
 	echo "<a href='/'>Return back to the main page</a>";
 }
 }
