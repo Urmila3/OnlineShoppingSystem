@@ -8,12 +8,12 @@ use App\Sale;
 
 class ReportController extends Controller
 {
-    publi8c function orders(Request $request){
+    public function orders(Request $request){
         $orders = Sale::all();
-        return view('admin.reports.orders',compact('orders'));
+        return view('reports.orders',compact('orders'));
     }
-    public function customers(){
+    public function customers(Request $request){
         $customers= Customer::all();
-        return view('admin.reports.customers',compact('customers'));
+        return view('reports.customers',compact('customers'));
     }
 }

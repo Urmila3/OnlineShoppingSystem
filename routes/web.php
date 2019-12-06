@@ -13,8 +13,8 @@
 
 Route::get('/','SiteController@index');
 
-Route::get('/Reports/orders',"ReportsController@orders");
-Route::get('/Reports/customers',"ReportsController@customers");
+Route::get('/Reports/orders',"ReportController@orders");
+Route::get('/Reports/customers',"ReportController@customers");
 
 Auth::routes();
 

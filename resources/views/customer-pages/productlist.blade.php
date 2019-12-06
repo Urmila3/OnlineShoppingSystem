@@ -39,6 +39,7 @@
              background: grey;
             border: 1px solid #red;
             margin:10px 10px;
+            width: 150px;
         }
         .add-to-cart-btn{
             background:green;
@@ -51,7 +52,7 @@
 </style>
 <div class="container">
     <?php if(!isset($prodss[0])){ ?>
-    <span class="search-result">Products are not available in..</span>
+    <span class="search-result">Products are not available in this category..</span>
     <?php } ?>
 
 <?php foreach($prodss as $product)  {  ?>
